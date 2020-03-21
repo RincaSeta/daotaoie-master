@@ -1,0 +1,509 @@
+html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.container::after,
+.container::before {
+    content: "";
+    display: table;
+}
+
+.container::after,
+.clearfix {
+    clear: both;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+/**▬▬▬▬ஜ۩۞۩ஜ▬▬­­­­­­­­­▬▬▬**­/
+    MOBILE DEVICE
+/**▬▬▬▬ஜ۩۞۩ஜ▬▬­­­­­­­­­▬▬▬**/
+@media only screen and (min-width: 320px) {
+    /* NAVIGATION */
+    nav {
+        width: 20%;
+        height: 100%;
+        background-color: #333;
+        position: fixed;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        overflow: hidden;
+    }
+
+    nav img {
+        display: block;
+        margin: 7% auto 1% auto;
+    }
+
+    .menu a {
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        padding: 8px 20px;
+    }
+
+    .currentLink{
+        background-color: black;
+    }
+
+    .menu a:hover {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+    }
+
+    .content {
+        display: none;
+    }
+
+    .currentContent {
+        display: block;
+    }
+
+    /* dropdown menu */
+    .menu {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+    }
+
+
+    /* MAIN */
+    main {
+        
+        width: 80%;
+        height: 100%;
+        
+    }
+
+    /* Noi dung theo menu*/
+    .deMucNho {
+        margin-top: 15px;
+    }
+
+    .tongQuan {
+        position: relative;
+        text-align: justify;
+    }
+
+    .imvie {
+        opacity: 0.5;
+        z-index: -2;
+        display: none;
+        position: fixed;
+        right: 10%;
+        top: 10%;
+        
+    }
+
+    .noidung a:hover {
+        text-decoration: none;
+        color: rgb(219, 11, 11);
+        font-weight: bold;
+    }
+
+
+    /* tab content */
+    button:hover {
+        background: #333;
+        color: #fff;
+    }
+    .tabs {
+        z-index: 3;
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+        border-bottom: 1px solid #333;
+    }
+
+    .tab-name,
+    .tab-huongdan-name {
+        border: rgb(174,174,174);
+        height: 100%;
+        display: inline-block;
+        padding: 10px;
+        background-color: #fff;
+        color: #333;
+    }
+
+    .tabs-content {
+        border-top: 1px solid rgb(179, 174, 174);
+        height: 100%;
+        padding-top: 60px;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .currentTabName {
+        background-color: rgb(206, 202, 202);
+    }
+
+    .currentTab {
+        display: block;
+        padding: 10px 15px;
+        text-align: justify;
+    }
+
+    /* LEARNER */
+    
+    .html, .css, .js, .php, .sql {
+        cursor: pointer;
+        display: inline-block;
+        height: 150px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 30px;
+        
+    }
+
+    .html {
+        background-image: url("img/htmllogo.png");
+    }
+
+    .css {
+        background-image: url("img/csslogo.png");
+    }
+
+    .js {
+        background-image: url("img/jslogo.png");
+    }
+
+    .php {
+        background-image: url("img/phplogo.png");
+    }
+
+    .sql {
+    
+        background-image: url("img/mysql.png");
+    }
+   
+    /* INTER */
+    table p {
+        margin-bottom: 4px;
+    }
+
+    .chuongTrinhInter {
+        width: 100%;
+    }
+
+
+    table th {
+        background-color: rgb(109, 7, 7);
+        padding: 10px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .stt, .thoigian, .tich {
+        text-align: center;
+
+    }
+
+    .thuthach, .hinhthuc, .yeucaucandat {
+        text-align: justify;
+        padding: 5px 10px;
+    }
+
+    .stt {width: 5%;}
+    .thoigian {width: 10%;}
+    .thuthach {width: 35%};
+    .hinhthuc {width: 15%;}
+    .yeucaucandat {width: 35%;}
+
+    /* TRAINEE */
+    /* du an lon */
+    .duAnLon {
+        width: 100%;
+    }
+
+    table, th, td {
+        border: 1px solid rgb(105, 104, 104);
+    }
+
+    table th {
+        text-align: center;
+    }
+
+    /* noi dung du an lon */
+    .layerDe {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        z-index: 5;
+        background-color: rgb(150, 143, 143);
+        display: none;
+        transition: 5s;
+        animation: fade-up 2s ease-in-out;
+    }
+
+    .dsDuAnLon:hover,
+    .dsDuAnNho:hover {
+        color: rgb(182, 7, 7);
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .huongDanDuAn {
+        position: fixed;
+        display: none;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        left: 10%;
+        right: 10%;
+        background-color: #eee;
+        z-index: 10;
+        overflow: scroll;
+        transition: 2s;
+        animation: fade-in 2s ease-in-out;
+        padding: 20px;
+        border: 1px solid #333;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.5), 0 2px 3px rgba(0,0,0,0.5);
+    }
+
+    .duAnTitle {
+        color: rgb(151, 13, 13);
+        animation: fade-in-left 3s ease-in-out;
+        border-bottom: 2px solid gray;
+    }
+
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -100%, 0);
+            -webkit-transform: translate3d(0, -100%, 0);
+            -o-transform: translate3d(0, -100%, 0);
+            -moz-transform: translate3d(0, -100%, 0);
+            -ms-transform: translate3d(0, -100%, 0);
+        }
+        
+        to {
+            opacity: 1;
+            transform: none;
+            -webkit-transform: none;
+            -o-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+        }
+    }
+
+    @keyframes fade-up {
+        from {
+            opacity: 0;
+            transform: translate3d(-100%, 0, 0);
+            -webkit-transform: translate3d(-100%, 0, 0);
+            -o-transform: translate3d(-100%, 0, 0);
+            -moz-transform: translate3d(-100%, 0, 0);
+            -ms-transform: translate3d(0, -100%, 0);
+        }
+        
+        to {
+            opacity: 0.5;
+            transform: none;
+            -webkit-transform: none;
+            -o-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+        }
+    }
+    
+    @keyframes fade-in-left {
+        from {
+            opacity: 0;
+            transform: translate3d(-25%, 0, 0);
+            -webkit-transform: translate3d(-25%, 0, 0);
+            -o-transform: translate3d(-25%, 0, 0);
+            -moz-transform: translate3d(-25%, 0, 0);
+            -ms-transform: translate3d(-25%, 0, 0);
+        }
+        
+        to {
+            opacity: 1;
+            transform: none;
+            -webkit-transform: none;
+            -o-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+        }
+    }
+
+    .huongDanDuAnContent .tabs {
+        background-color: #eee;
+        position: relative;
+    }
+
+    .tab-huongdan-content {
+        display: none;
+    }
+
+
+    .currentTabHuongDan {
+        display: block;
+    }
+
+    .alov-logo {
+        width: 150px;
+        height: 150px;
+        background-image: url("img/alovlogo.png");
+        background-size: contain;
+        margin: 20px auto;
+    }
+
+    .tab-huongdan-content table {
+        margin: auto;
+
+    }
+
+    .tab-huongdan-content table td {
+        text-align: center;
+    }
+
+    
+        
+    /**CLOSE BUTTON**/
+    .btn-close {
+        position: fixed;
+        top: 4px;
+        right: 12%;
+        cursor: pointer;
+        padding: 5px;
+        color: rgb(151, 14, 14);
+        font-weight: bold;
+        font-size: 1.5rem;
+        z-index: 15;
+    }
+
+    .btn-close:hover {
+        transform: scale(1.5);
+    }
+
+}
+
+/**▬▬▬▬ஜ۩۞۩ஜ▬▬­­­­­­­­­▬▬▬**­/
+    TABLET DEVICE
+/**▬▬▬▬ஜ۩۞۩ஜ▬▬­­­­­­­­­▬▬▬**/
+@media only screen and (min-width: 768px) {
+    .col-md-6 {
+        max-width: 45% !important;
+    }
+}
+
+
+/**▬▬▬▬ஜ۩۞۩ஜ▬▬­­­­­­­­­▬▬▬**­/
+    PC DEVICE
+/**▬▬▬▬ஜ۩۞۩ஜ▬▬­­­­­­­­­▬▬▬**/
+@media only screen and (min-width: 992px) {
+
+    .imvie {
+        display: block;
+    }
+
+    .inter .imvie {
+        top: 25%;
+        right: 0;
+    }
+
+    .learner .imvie {
+        right: 0;
+        top: 0;
+        
+    }
+
+    .tabs-content {
+        padding-top: 30px;
+    }
+
+    .col-lg-2 {
+        max-width: 19.5% !important;
+    }
+
+   
+}
+
+/* library css */
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.padding50 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.fbold {
+    font-weight: bold;
+}
+
+.tacen {
+    text-align: center;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.pr20 {
+    padding-right: 20px;
+}
+
+.pl20 {
+    padding-left: 20px;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.pb20 {
+    padding-bottom: 20px;
+}
+
+.clred {
+    color: rgb(204, 9, 9);
+}
+
+.dpb {
+    display: block;
+}
+
+.dpn {
+    display: none;
+}
+
+.lh15 {
+    line-height: 1.5;
+}
+
+.w90 {width: 90%5;}
